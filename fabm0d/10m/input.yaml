@@ -1,0 +1,9 @@
+#    constant_value: 0.001
+#    constant_value: 0.001
+#    file: PATH_TO_TIME_SERIES_FILE
+#    [column: COLUMN_IN_TIME_SERIES_FILE]
+wind_speed:
+    constant_value: 3.0
+bottom_stress:
+    file: env_10m.dat
+    column: 4
