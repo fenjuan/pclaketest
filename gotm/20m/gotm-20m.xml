@@ -3,7 +3,7 @@
 	<gotmrun>
 		<model_setup>
 			<title>
-				PCLake-gotm-lake
+				PCLake-gotm
 			</title>
 			<nlev>
 				50
@@ -20,7 +20,7 @@
 		</model_setup>
 		<station>
 			<name>
-				PCLake-gotm-lake-20m
+				PCLake-gotm-20m
 			</name>
 			<latitude>
 				56.106
@@ -54,7 +54,7 @@
 				../../output/.
 			</out_dir>
 			<out_fn>
-				pclake-gotm-lake-20m
+				pclake-gotm-20m
 			</out_fn>
 			<nfirst>
 				12
@@ -153,12 +153,8 @@
 			<no_shear>
 				False
 			</no_shear>
-			<hypsograph_file>
-				hypsograph_20m.dat
-			</hypsograph_file>
-			<water_balance_method>
-				1
-			</water_balance_method>
+			<hypsograph_file/>
+			<water_balance_method/>
 		</meanflow>
 	</gotmmean>
 	<airsea>
@@ -804,12 +800,8 @@
 			<no_surface>
 				True
 			</no_surface>
-			<configuration_method>
-				1
-			</configuration_method>
-			<bottom_everywhere>
-				True
-			</bottom_everywhere>
+			<configuration_method/>
+			<bottom_everywhere/>
 		</gotm_fabm_nml>
 	</gotm_fabm>
 	<fabm_input>

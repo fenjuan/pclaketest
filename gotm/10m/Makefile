@@ -2,7 +2,7 @@
 # Makefile for 'gotm-lake-10m' setup.
 #
 
-name	= gotm-lake-10m
+name	= gotm-10m
 setup	= $(name)
 
 include Rules.make
