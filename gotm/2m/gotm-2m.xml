@@ -3,7 +3,7 @@
 	<gotmrun>
 		<model_setup>
 			<title>
-				PCLake-gotm-lake
+				PCLake-gotm
 			</title>
 			<nlev>
 				5
@@ -154,9 +154,7 @@
 				False
 			</no_shear>
 			<hypsograph_file/>
-			<water_balance_method>
-				1
-			</water_balance_method>
+			<water_balance_method/>
 		</meanflow>
 	</gotmmean>
 	<airsea>
@@ -802,12 +800,8 @@
 			<no_surface>
 				True
 			</no_surface>
-			<configuration_method>
-				1
-			</configuration_method>
-			<bottom_everywhere>
-				True
-			</bottom_everywhere>
+			<configuration_method/>
+			<bottom_everywhere/>
 		</gotm_fabm_nml>
 	</gotm_fabm>
 	<fabm_input>
