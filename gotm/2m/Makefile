@@ -2,7 +2,7 @@
 # Makefile for pclake-gotm-lake setup.
 #
 
-name	= gotm-lake-2m
+name	= gotm-2m
 setup	= $(name)
 
 include Rules.make

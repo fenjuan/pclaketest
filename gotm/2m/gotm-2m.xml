@@ -20,7 +20,7 @@
 		</model_setup>
 		<station>
 			<name>
-				PCLake-gotm-lake-2m
+				PCLake-gotm-2m
 			</name>
 			<latitude>
 				56.106
@@ -54,7 +54,7 @@
 				../../output/.
 			</out_dir>
 			<out_fn>
-				pclake-gotm-lake-2m
+				pclake-gotm-2m
 			</out_fn>
 			<nfirst>
 				12
@@ -153,9 +153,7 @@
 			<no_shear>
 				False
 			</no_shear>
-			<hypsograph_file>
-				hypsograph_2m.dat
-			</hypsograph_file>
+			<hypsograph_file/>
 			<water_balance_method>
 				1
 			</water_balance_method>
