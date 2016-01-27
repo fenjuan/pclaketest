@@ -1,7 +1,12 @@
-../../output/pclake-gotm-lake-5m:
+../../output/pclake-gotm-5m:
    time_unit: day
    time_step: 1
    sync_interval: 0
    variables:
       - source: *
-
+../../fabm0d/5m/env-5m:
+  time_unit: hour
+  time_step: 3
+  sync_interval: 0
+  variables:
+     - source: *

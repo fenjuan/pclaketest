@@ -1,0 +1,7 @@
+../../output/pclake-fabm0d-2m:
+   title: pclake-fabm0d-2m
+   time_unit: day
+   time_step: 1
+   sync_interval: 0
+   variables:
+      - source: *

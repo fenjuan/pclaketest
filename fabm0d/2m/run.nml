@@ -16,9 +16,9 @@
 !                       posit.)
 !                     This variable is used only if fabm_calc = True
 &model_setup
-title='PCLake'
+title='PCLake-0d-2m'
 start="2002-01-01 00:00:00"
-stop="2012-01-01 00:00:00"
+stop="2022-01-01 00:00:00"
 dt=600
 ode_method=3
 repair_state=.true.
@@ -28,7 +28,7 @@ repair_state=.true.
 !-------------------------------------------------------------------
 ! swr_method: 0 - calculate from cloud,time,lon,lat
 !             1 - read from file, but calculate PAR incl. extinction
-!             2 - read from file, assume values to be PAR, 
+!             2 - read from file, assume values to be PAR,
 !                PCLake ref test choose this one
 !                constant water depth 2m
 ! ------------------------------------------------------------------
@@ -47,12 +47,10 @@ apply_self_shading=.true.
 /
 
 &output
-output_format=1
-output_file='E:\Phd_folder\PCLake_0d_and_gotm\Oligotrophic\output\2m_0d_oligo.dat'
 output_format=2
-output_file='E:\Phd_folder\PCLake_0d_and_gotm\Oligotrophic\output\2m_0d_oligo.nc'
+output_file='.'
 nsave=72
 add_environment=.true.
-add_conserved_quantities=.false.
-add_diagnostic_variables=.false.
+add_conserved_quantities=.true.
+add_diagnostic_variables=.true.
 /
