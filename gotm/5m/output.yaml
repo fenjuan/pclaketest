@@ -4,7 +4,7 @@
    sync_interval: 0
    variables:
       - source: *
-../../fabm0d/5m/env-5m:
+../../fabm0d/env/env-5m:
   time_unit: hour
   time_step: 3
   sync_interval: 0
