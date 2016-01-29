@@ -1,4 +1,6 @@
 *.nc
 *.nml
 *.ipynb_checkpoints
+*.keep
+*.dat
 ! gotm_fabm.nml
