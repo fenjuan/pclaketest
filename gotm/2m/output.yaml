@@ -1,4 +1,4 @@
-../../output/pclake-gotm-2m:
+../../output/pclake-gotm1d-2m:
    time_unit: day
    time_step: 1
    sync_interval: 0

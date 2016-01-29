@@ -3,7 +3,7 @@
 	<gotmrun>
 		<model_setup>
 			<title>
-				PCLake-gotm
+				PCLake-gotm1d
 			</title>
 			<nlev>
 				50
@@ -20,7 +20,7 @@
 		</model_setup>
 		<station>
 			<name>
-				PCLake-gotm-20m
+				PCLake-gotm1d-20m
 			</name>
 			<latitude>
 				56.106
@@ -54,7 +54,7 @@
 				../../output/.
 			</out_dir>
 			<out_fn>
-				pclake-gotm-20m
+				pclake-gotm1d-20m
 			</out_fn>
 			<nfirst>
 				12

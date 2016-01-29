@@ -1,7 +1,6 @@
-../../output/pclake-gotm-lake-10m:
+../../output/pclake-gotmlake-10m:
    time_unit: day
    time_step: 1
    sync_interval: 0
    variables:
       - source: *
-
