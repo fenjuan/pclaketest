@@ -60,7 +60,7 @@
 				12
 			</nfirst>
 			<nsave>
-				12
+				72
 			</nsave>
 			<sync_out>
 				0
@@ -185,14 +185,17 @@
 				0
 			</heat_method>
 			<rain_impact>
-				False
+				True
 			</rain_impact>
 			<calc_evaporation>
 				False
 			</calc_evaporation>
 			<swr_method>
-				3
+				2
 			</swr_method>
+			<albedo_method>
+				0
+			</albedo_method>
 			<const_swr>
 				0.0
 			</const_swr>
@@ -224,7 +227,7 @@
 			</const_precip>
 			<precip_file/>
 			<precip_factor>
-				1.0
+				1.1574e-05
 			</precip_factor>
 			<sst_method>
 				0
@@ -507,9 +510,7 @@
 			<s_obs_NN>
 				0.000256
 			</s_obs_NN>
-			<s_prof_file>
-				sprof.dat
-			</s_prof_file>
+			<s_prof_file/>
 			<SRelaxTauM>
 				42300.0
 			</SRelaxTauM>
@@ -655,7 +656,7 @@
 			</w_adv0>
 			<w_adv_file/>
 			<w_adv_discr>
-				6
+				4
 			</w_adv_discr>
 		</w_advspec>
 		<zetaspec>
@@ -796,13 +797,13 @@
 				False
 			</salinity_relaxation_to_freshwater_flux>
 			<no_precipitation_dilution>
-				False
+				True
 			</no_precipitation_dilution>
 			<save_inputs>
 				True
 			</save_inputs>
 			<no_surface>
-				True
+				False
 			</no_surface>
 			<configuration_method>
 				1
