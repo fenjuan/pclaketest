@@ -14,7 +14,7 @@ instances:
       sPDetW: 0.00878401       # gP/m**3 ; water detritus,cPDDet0=0.0025,gP/gDDet ; initial P fraction in detritus
       sNDetW: 0.0596219       # gN/m**3 ; water detritus,cNDDet0 [ 0.025 ] gN/gDDet ; initial N fraction in detritus
       sSiDetW: 0.147208       # gSi/m**3 ; water detritus,cSiDDet0 [ 0.01 ] gSi/gDDet ; initial Si fraction in detritus
-    parameters:
+    parameters:       
       cCPerDW: 0.4       # gC/gDW ; C content of organic matter
       cExtSpDet : 0.15    # 0.15 m2/gDW  specific_extinction_detritus"
       cExtSpIM: 0.05      # 0.05m2/gDW  specific_extinction_inert_matter"
@@ -36,10 +36,10 @@ instances:
       kPSorp: 0.05       # day-1 ; P sorption rate constant not too high -> model speed day
       NO3PerC: 0.8       # mol NO3 denitrified per mol C mineralised
       O2PerNH4: 2        # mol O2 used per mol NH4+ nitrified
-# sinking
+# sinking                
       cVSetIM: -1.0       # m/day ; max. sedimentation velocity of inert org. matter
       cVSetDet: -0.25     # m/day ; max. sedimentation velocity of detritus
-  abiotic_sediment:
+  abiotic_sediment:      
     model: au_pclake_abiotic_sediment
     long_name: abiotic_process_in_sediment
     initialization:
@@ -56,8 +56,8 @@ instances:
       sNHumS: 166.104     # gN/m2, humus in sediment,initial N fraction in humus
       sPHumS: 16.9661      # gP/m2, humus in sediment, initial P fraction in humus
     parameters:
-      bPorS: 0.847947    #  porosity [m3 water m-3 sediment],bPorS =
-                         # (1.0 - fDTotS0) * bRhoSolidS0 / cRhoWat /
+      bPorS: 0.847947    #  porosity [m3 water m-3 sediment],bPorS = 
+                         # (1.0 - fDTotS0) * bRhoSolidS0 / cRhoWat / 
                          # ( fDTotS0 + (1.0 - fDTotS0) *bRhoSolidS0 / cRhoWat )
       bPorCorS: 0.737275 # sediment porosity, corrected for tortuosity,bPorCorS = bPorS ** (bPorS + 1.0)
       cCPerDW: 0.4       # gC/gDW ; C content of organic matter
@@ -174,7 +174,7 @@ instances:
       kMortBlueW: 0.01     # day-1 ; mortality constant of blue-greens in water
       kMortDiatW: 0.01     # day-1 ; mortality constant of Diatoms in water
       kMortGrenW: 0.01     # day-1 ; mortality constant of Diatoms in water
-
+      
 # sinking
       cVSetDiat: -1.0     # m/day ; sedimentation velocity Diatoms
       cVSetGren: -0.2     # m/day ; sedimentation velocity of greens
@@ -311,13 +311,13 @@ instances:
       sDZoo: 0.199642
       sPZoo: 0.00989778
       sNZoo: 0.00137144
-      sDFiJv: 0.353491      # for depth 1.0m,  0.353491
-      sPFiJv: 0.00740722     # for depth 1.0m,  0.00740722
-      sNFiJv: 0.0358126      # for depth 1.0m,  0.0358126
-      sDFiAd: 2.88693       # for depth 1.0m,  2.88693
-      sPFiAd: 0.02826425     # for depth 1.0m,  0.0565285
-      sNFiAd: 0.0565285      # for depth 1.0m,  0.295867
-      sDPisc: 0.0755329     # for depth 1.0m,  0.0755329
+      sDFiJv: 0.1767455      # for depth 1.0m,  0.353491      
+      sPFiJv: 0.00370361     # for depth 1.0m,  0.00740722     
+      sNFiJv: 0.0179063      # for depth 1.0m,  0.0358126      
+      sDFiAd: 1.443465       # for depth 1.0m,  2.88693        
+      sPFiAd: 0.02826425     # for depth 1.0m,  0.0565285      
+      sNFiAd: 0.1479335      # for depth 1.0m,  0.295867        
+      sDPisc: 0.03776645     # for depth 1.0m,  0.0755329     
     parameters:
       cCovVegMin: 40         #   %                      min._subm.veg._coverage_for__Pi_sc
       cDayReprFish: 120      #   -                      reproduction_date_of_fish_: _1_May
@@ -518,7 +518,7 @@ instances:
       cNO3Ground: 0.1         # mgN/l ; NO3 cone in groundwater
       cTmOptFish: 25          #   oC                     optimum_temp._of_fish
       cSigTmFish: 10          #   oC                     temperature_constant_of_fish(sigma_in_Gaussian_curve)
- #     cLoadPO4: 0.0005         # gP/m2/day, constant, different from cLoadIM
+      cLoadPO4: 0.0005         # gP/m2/day, constant, different from cLoadIM
       cLoadNO3: 0.005          # gN/m2/day, constant
       uQIn: 20.0             # mm/day, net water load rate, constant
       cDErosTot: 0.1         # g/m2/day,Erosion_input_(tentative)
@@ -539,11 +539,11 @@ instances:
       crt_shear: 0.005      # critical shear stress
       ref_shear: 1.0        # reference shear stress
       alpha: 9000           # gross rate of sediment erosion(g/m**2/d,btween 9000-9900g/m**2/d) )
-      eta: 1.0
+      eta: 1.0         
       cVSetMain: 0.5      # depth averaged settling velocity(m/d), between 0.5-1.5m/d)
       resusp_meth: 2      # 1, original PCLake resuspension function; 2, shear stress related resuspension
     coupling:
-
+      
       ammonia_pool_in_water: abiotic_water/sNH4W
       Nitrate_pool_in_water: abiotic_water/sNO3W
       Phosphate_pool_in_water: abiotic_water/sPO4W
@@ -595,3 +595,4 @@ instances:
       Zooplankton_P: foodweb_water/sPZoo
       Zooplankton_N: foodweb_water/sNZoo
       SiO2_pool_water: abiotic_water/sSiO2W
+

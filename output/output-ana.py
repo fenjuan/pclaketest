@@ -93,6 +93,14 @@ df_fabm0d={};df_gotm1d={};df_gotmlake={}
 for f_0d in fabm0d:
     path=os.path.join(output_dir, f_0d)
     fabm0d_nc=Dataset(path, mode='r')
+    if f_0d=='pclake-fabm0d-2m.nc':
+        depth=2.0
+    elif f_0d=='pclake-fabm0d-5m.nc':
+        depth=5.0
+    elif f_0d=='pclake-fabm0d-5m.nc':
+        depth=10.0
+    elif f_0d=='pclake-fabm0d-5m.nc':
+        depth=20.0
 # create empty lists for storging extracted and treated variables
     temperature=fabm0d_nc.variables['temp'][start:stop,0,0]
     PAR=fabm0d_nc.variables['phytoplankton_water_partop'][start:stop,0,0]
@@ -103,6 +111,7 @@ for f_0d in fabm0d:
     Zoo=fabm0d_nc.variables['foodweb_water_sDZoo'][start:stop,0,0]
     Fish=fabm0d_nc.variables['foodweb_water_sDFiAd'][start:stop,0,0]+\
      fabm0d_nc.variables['foodweb_water_sDFiJv'][start:stop,0,0]
+    Fish=Fish*depth
     Veg=fabm0d_nc.variables['macrophytes_sDVeg'][start:stop,0,0]
     Ben=fabm0d_nc.variables['foodweb_sediment_sDBent'][start:stop,0,0]
 # put list into pandas dataframe format
@@ -243,10 +252,9 @@ results= pd.concat([df_2m,df_5m,df_10m,df_20m],axis=1,keys=['2m','5m','10m','20m
 """
 # Give the lables of variables for plotting
 models=['fabm0d','gotm1d','gotmlake']
-variables_group1 = ['temp', 'totN', 'totP',  'O2']
+variables_group1 = ['temp', 'O2','totN', 'totP']
 variables_group2= ['PAR','aDPhytW','sDZoo','aDFish']
 depths=['2m','5m','10m','20m']
-xticklabels=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct',',Nov','Dec']
 colors=['b','g','r']
 lines=['--','-','-.']
 #get y-lim range for each variable
@@ -282,7 +290,7 @@ fontP = FontProperties()
 fontP.set_size('xx-small')
 # Plot line plots with three different model output
 # Plot group one variables
-fig1 = plt.figure(figsize=(8.27, 11.69), dpi=1200)
+fig1 = plt.figure()
 fig1, axs = plt.subplots(4,4,sharex=True,squeeze=True, )
 # adjust the space between subplots
 fig1.subplots_adjust(hspace = 0.07)
@@ -302,6 +310,7 @@ for depth in depths:
             axs[i,j].xaxis_date()
             axs[i,j].xaxis.set_major_locator(mdates.MonthLocator())
             axs[i,j].xaxis.set_major_formatter(mdates.DateFormatter('%b'))
+            plt.setp( axs[i,j].xaxis.get_majorticklabels(), rotation=90 )
             for xtick in axs[i,j].xaxis.get_major_ticks():
                 xtick.label.set_fontsize(5)
         for ytick in axs[j,i].yaxis.get_major_ticks():
@@ -313,26 +322,25 @@ for depth in depths:
 # The following is setting legends and labels for the picture
 # i.e making the picture look beautiful
 # Make legend, accoring to subplot [2,3], place it on the right side of the figure
-legend = axs[2,3].legend(loc=1, ncol=1, bbox_to_anchor=(0, 0, 1.65,1.4),
+legend = axs[2,3].legend(loc=1, ncol=1, bbox_to_anchor=(0, 0, 1.70,1.4),
                          prop = fontP,fancybox=True,shadow=False)
 legend.draw_frame(False)
 plt.setp(legend.get_title(),fontsize='xx-small')
 # Add text for variables
-fig1.text(0.15,0.92,'Temperature',**{'fontsize':10})
-fig1.text(0.38,0.92,'Oxygen',**{'fontsize':10})
-fig1.text(0.55,0.92,'Total Nitrogen',**{'fontsize':10})
-fig1.text(0.75,0.92,'Total Phosphorus',**{'fontsize':10})
+fig1.text(0.14,0.92,'Temperature',**{'fontsize':10})
+fig1.text(0.37,0.92,'Oxygen',**{'fontsize':10})
+fig1.text(0.53,0.92,'Total Nitrogen',**{'fontsize':10})
+fig1.text(0.73,0.92,'Total Phosphorus',**{'fontsize':10})
 # Add text for depth
 fig1.text(0.05,0.8,'2m',**{'fontsize':10})
 fig1.text(0.05,0.6,'5m',**{'fontsize':10})
 fig1.text(0.05,0.4,'10m',**{'fontsize':10})
 fig1.text(0.05,0.2,'20m',**{'fontsize':10})
-fig1.autofmt_xdate(rotation=90)
 # Save figure, and reduce the margins
-fig1.savefig('fig1.png',bbox_inches='tight')
+fig1.savefig('fig1.png',bbox_inches='tight',dpi=1200)
 plt.close()
 # plot group two variables
-fig2 = plt.figure(figsize=(8.27, 11.69), dpi=1200)
+fig2 = plt.figure()
 fig2, axs = plt.subplots(4,4,sharex=True)
 j=0
 for depth in depths:
@@ -349,6 +357,7 @@ for depth in depths:
             axs[i,j].xaxis_date()
             axs[i,j].xaxis.set_major_locator(mdates.MonthLocator())
             axs[i,j].xaxis.set_major_formatter(mdates.DateFormatter('%b'))
+            plt.setp( axs[i,j].xaxis.get_majorticklabels(), rotation=90 )
             for xtick in axs[i,j].xaxis.get_major_ticks():
                 xtick.label.set_fontsize(5)
         for ytick in axs[j,i].yaxis.get_major_ticks():
@@ -358,23 +367,22 @@ for depth in depths:
 # The following is setting legends and labels for the picture
 # i.e making the picture look beautiful
 # Make legend, accoring to subplot [2,3], place it on the right side of the figure
-legend = axs[2,3].legend(loc=1, ncol=1, bbox_to_anchor=(0, 0, 1.65,1.4),
+legend = axs[2,3].legend(loc=1, ncol=1, bbox_to_anchor=(0, 0, 1.70,1.4),
                          prop = fontP,fancybox=True,shadow=False)
 legend.draw_frame(False)
 plt.setp(legend.get_title(),fontsize='xx-small')
 # Add text for variables
 fig2.text(0.19,0.92,'PAR',**{'fontsize':10})
-fig2.text(0.35,0.92,'Phytoplankton',**{'fontsize':10})
-fig2.text(0.56,0.92,'Zooplankton',**{'fontsize':10})
+fig2.text(0.34,0.92,'Phytoplankton',**{'fontsize':10})
+fig2.text(0.55,0.92,'Zooplankton',**{'fontsize':10})
 fig2.text(0.79,0.92,'Fish',**{'fontsize':10})
 # Add text for depth
 fig2.text(0.05,0.8,'2m',**{'fontsize':10})
 fig2.text(0.05,0.6,'5m',**{'fontsize':10})
 fig2.text(0.05,0.4,'10m',**{'fontsize':10})
 fig2.text(0.05,0.2,'20m',**{'fontsize':10})
-fig2.autofmt_xdate(rotation=90)
 # Save figure, and reduce the margins
-fig2.savefig('fig2.png',bbox_inches='tight')
+fig2.savefig('fig2.png',bbox_inches='tight',dpi=1200)
 plt.close()
 
 """
@@ -436,7 +444,9 @@ for f_1d in gotm1d:
     df_Phyto_1d=DataFrame(Phyto_1d,index=np.arange(lvl), columns=[time])
     df_Zoo_1d=DataFrame(Zoo_1d,index=np.arange(lvl), columns=[time])
     df_Fish_1d=DataFrame(Fish_1d,index=np.arange(lvl), columns=[time])
-    df_1d[f_1d]= pd.concat([df_tm_1d,df_O2_1d,df_TN_1d,df_TP_1d,df_PAR_1d,                                 df_Phyto_1d, df_Zoo_1d,df_Fish_1d],axis=1,keys=                                 ['tm','O2','TN','TP','PAR','Phy','Zoo','Fis'])
+    df_1d[f_1d]= pd.concat([df_tm_1d,df_O2_1d,df_TN_1d,df_TP_1d,df_PAR_1d,\
+                                 df_Phyto_1d, df_Zoo_1d,df_Fish_1d],axis=1,keys=\
+                                 ['tm','O2','TN','TP','PAR','Phy','Zoo','Fis'])
 
 
 # In[21]:
@@ -493,18 +503,18 @@ for var in group2:
     vmax_2.append(np.max(vmax_depths))
 
 # starting plot group1 variables
-com_1d1 = plt.figure(figsize=(8.27, 11.69), dpi=1200)
+com_1d1 = plt.figure()
 com_1d1, axs = plt.subplots(8,4,sharex=True,squeeze=True)
 # add color bar postions
 # add color bar, for group 1
 cbposition1=[]
-cbposition_1=com_1d1.add_axes([0.13, 0.93, 0.15,0.01])
+cbposition_1=com_1d1.add_axes([0.13, 0.95, 0.15,0.01])
 cbposition1.append(cbposition_1)
-cbposition_2=com_1d1.add_axes([0.33, 0.93, 0.15,0.01])
+cbposition_2=com_1d1.add_axes([0.33, 0.95, 0.15,0.01])
 cbposition1.append(cbposition_2)
-cbposition_3=com_1d1.add_axes([0.53, 0.93, 0.15,0.01])
+cbposition_3=com_1d1.add_axes([0.53, 0.95, 0.15,0.01])
 cbposition1.append(cbposition_3)
-cbposition_4=com_1d1.add_axes([0.73, 0.93, 0.15,0.01])
+cbposition_4=com_1d1.add_axes([0.73, 0.95, 0.15,0.01])
 cbposition1.append(cbposition_4)
 # j for column location
 j=0
@@ -525,6 +535,7 @@ for var in group1:
             axs[i,j].xaxis_date()
             axs[i,j].xaxis.set_major_locator(mdates.MonthLocator())
             axs[i,j].xaxis.set_major_formatter(mdates.DateFormatter('%b'))
+            plt.setp( axs[i,j].xaxis.get_majorticklabels(), rotation=90 )
             for xtick in axs[i,j].xaxis.get_major_ticks():
                 xtick.label.set_fontsize(5)
 # Set y-axis for subplots
@@ -534,7 +545,7 @@ for var in group1:
                 ytick.label.set_fontsize(5)
 # set labels for different model output
             if j==0:
-                axs[i,j].set_ylabel(model,fontsize=8,rotation='horizontal')
+                axs[i,j].set_ylabel(model,fontsize=6,rotation='horizontal')
                 axs[i,j].yaxis.set_label_coords(-0.25, 0.5)
 # plotting color bar
             if i==0:
@@ -543,35 +554,39 @@ for var in group1:
                 cblocator=[];step=(vmax-vmin)/5;
                 cblocator=[vmin,vmin+step,vmin+2*step,vmin+3*step,vmin+4*step,vmin+5*step]
                 cb.set_ticks(cblocator)
-                cb.formatter=ticker.FormatStrFormatter(('%0.1f'))
+                if j==0:
+                    cb.formatter=ticker.FormatStrFormatter(('%0.1f'))
+                elif j==1:
+                    cb.formatter=ticker.FormatStrFormatter(('%0.1f'))
+                else:
+                    cb.formatter=ticker.FormatStrFormatter(('%0.2f'))
                 cb.update_ticks()
                 cb.ax.tick_params(labelsize=5)
             i=i+1
         k=k+1
     j=j+1
 # add columns for variables
-com_1d1.text(0.15,0.95,'Temperature',**{'fontsize':8})
-com_1d1.text(0.38,0.95,'Oxygen',**{'fontsize':8})
-com_1d1.text(0.55,0.95,'Total Nitrogen',**{'fontsize':8})
-com_1d1.text(0.75,0.95,'Total Phosphorus',**{'fontsize':8})
-com_1d1.autofmt_xdate(rotation=90)
+com_1d1.text(0.15,0.97,'Temperature',**{'fontsize':8})
+com_1d1.text(0.37,0.97,'Oxygen',**{'fontsize':8})
+com_1d1.text(0.53,0.97,'Total Nitrogen',**{'fontsize':8})
+com_1d1.text(0.73,0.97,'Total Phosphorus',**{'fontsize':8})
 #save fig
-com_1d1.savefig('comp_1d_1.png',bbox_inches='tight')
+com_1d1.savefig('comp_1d_1.png',bbox_inches='tight',dpi=1200)
 plt.close()
 
 # Plotting variables group2
-com_1d2 = plt.figure(figsize=(8.27, 11.69), dpi=1200)
+com_1d2 = plt.figure()
 com_1d2, axs = plt.subplots(8,4,sharex=True,squeeze=True)
 # add color bar postions
 # add color bar, for group 1
 cbposition2=[]
-cbposition_1=com_1d2.add_axes([0.13, 0.93, 0.15,0.01])
+cbposition_1=com_1d2.add_axes([0.13, 0.95, 0.15,0.01])
 cbposition2.append(cbposition_1)
-cbposition_2=com_1d2.add_axes([0.33, 0.93, 0.15,0.01])
+cbposition_2=com_1d2.add_axes([0.33, 0.95, 0.15,0.01])
 cbposition2.append(cbposition_2)
-cbposition_3=com_1d2.add_axes([0.53, 0.93, 0.15,0.01])
+cbposition_3=com_1d2.add_axes([0.53, 0.95, 0.15,0.01])
 cbposition2.append(cbposition_3)
-cbposition_4=com_1d2.add_axes([0.73, 0.93, 0.15,0.01])
+cbposition_4=com_1d2.add_axes([0.73, 0.95, 0.15,0.01])
 cbposition2.append(cbposition_4)
 # j for column location
 j=0
@@ -589,6 +604,7 @@ for var in group2:
             axs[i,j].xaxis_date()
             axs[i,j].xaxis.set_major_locator(mdates.MonthLocator())
             axs[i,j].xaxis.set_major_formatter(mdates.DateFormatter('%b'))
+            plt.setp( axs[i,j].xaxis.get_majorticklabels(), rotation=90 )
             for xtick in axs[i,j].xaxis.get_major_ticks():
                 xtick.label.set_fontsize(5)
 # Set y-axis for subplots
@@ -598,7 +614,7 @@ for var in group2:
                 ytick.label.set_fontsize(5)
 # set labels for different model output
             if j==0:
-                axs[i,j].set_ylabel(model,fontsize=8,rotation='horizontal')
+                axs[i,j].set_ylabel(model,fontsize=6,rotation='horizontal')
                 axs[i,j].yaxis.set_label_coords(-0.25, 0.5)
 # plotting color bar
             if i==0:
@@ -607,7 +623,10 @@ for var in group2:
                 cblocator=[];step=(vmax-vmin)/5;
                 cblocator=[vmin,vmin+step,vmin+2*step,vmin+3*step,vmin+4*step,vmin+5*step]
                 cb.set_ticks(cblocator)
-                cb.formatter=ticker.FormatStrFormatter(('%0.1f'))
+                if j==0:
+                    cb.formatter=ticker.FormatStrFormatter(('%0.1f'))
+                else:
+                    cb.formatter=ticker.FormatStrFormatter(('%0.2f'))
                 cb.update_ticks()
                 cb.ax.tick_params(labelsize=5)
             i=i+1
@@ -615,13 +634,11 @@ for var in group2:
     j=j+1
 # adjust a-axis labels
 # add columns for variables
-com_1d2.text(0.17,0.95,'PAR',**{'fontsize':8})
-com_1d2.text(0.36,0.95,'Phytoplankton',**{'fontsize':8})
-com_1d2.text(0.55,0.95,'Zooplankton',**{'fontsize':8})
-com_1d2.text(0.77,0.95,'Fish',**{'fontsize':8})
-com_1d2.autofmt_xdate(rotation=90)
-
-com_1d2.savefig('comp_1d_2.png',bbox_inches='tight')
+com_1d2.text(0.17,0.97,'PAR',**{'fontsize':8})
+com_1d2.text(0.34,0.97,'Phytoplankton',**{'fontsize':8})
+com_1d2.text(0.55,0.97,'Zooplankton',**{'fontsize':8})
+com_1d2.text(0.78,0.97,'Fish',**{'fontsize':8})
+com_1d2.savefig('comp_1d_2.png',bbox_inches='tight',dpi=1200)
 
 """
 **************************End of 2D plotting section***************************

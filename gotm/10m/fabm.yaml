@@ -517,7 +517,7 @@ instances:
       cTmOptFish: 25          #   oC                     optimum_temp._of_fish
       cSigTmFish: 10          #   oC                     temperature_constant_of_fish(sigma_in_Gaussian_curve)
       cLoadPO4: 0.0005         # gP/m2/day, constant, different from cLoadIM
-      cLoadNO3: 0.005          # gN/m2/day, constant
+      cLoadNO3: 0.015          # gN/m2/day, constant
       uQIn: 20.0             # mm/day, net water load rate, constant
       cDErosTot: 0.1         # g/m2/day,Erosion_input_(tentative)
       fSedErosIM: 0.95       # instantly_sedimentating_fraction_of_IM
