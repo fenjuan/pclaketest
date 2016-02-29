@@ -7,3 +7,6 @@ wind_speed:
 bottom_stress:
     file: env_10m.dat
     column: 4
+temperature:
+    file: env_10m.dat
+    column: 2
