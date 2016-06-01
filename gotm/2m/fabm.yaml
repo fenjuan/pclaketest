@@ -545,7 +545,7 @@ instances:
     coupling:
       
       ammonia_pool_in_water: abiotic_water/sNH4W
-      Nitrate_pool_in_water: abiotic_water/sNO3W
+      nitrate_pool_in_water: abiotic_water/sNO3W
       Phosphate_pool_in_water: abiotic_water/sPO4W
       Absorbed_phosphrus_in_water: abiotic_water/sPAIMW
       Oxygen_pool_in_water: abiotic_water/sO2W
@@ -564,7 +564,7 @@ instances:
       Green_P_in_water: phytoplankton_water/sPGrenW
       Blue_P_in_water: phytoplankton_water/sPBlueW
       ammonia_pool_in_sediment: abiotic_sediment/sNH4S
-      Nitrate_pool_in_sediment: abiotic_sediment/sNO3S
+      nitrate_pool_in_sediment: abiotic_sediment/sNO3S
       Phosphate_pool_in_sediment: abiotic_sediment/sPO4S
       Absorbed_phosphrus_in_sediment: abiotic_sediment/sPAIMS
       Inorg_pool_in_sediment: abiotic_sediment/sDIMS
