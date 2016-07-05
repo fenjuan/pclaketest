@@ -40,7 +40,7 @@ latitude=55.7
 longitude=9.3
 cloud=0.5
 par_fraction=0.42
-depth=20.0
+depth=19.999
 par_background_extinction=0.0435
 apply_self_shading=.true.
 
@@ -52,5 +52,5 @@ output_file='.'
 nsave=72
 add_environment=.true.
 add_conserved_quantities=.true.
-add_diagnostic_variables=.ture.
+add_diagnostic_variables=.true.
 /
