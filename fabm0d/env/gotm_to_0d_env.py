@@ -28,7 +28,7 @@ time = data.variables['time']
 dailypar=data.variables['rad']
 temp = data.variables['temp']
 salinity =data.variables['salt']
-shearstress=data.variables['auxiliary_shearstress']
+#shearstress=data.variables['auxiliary_shearstress']
 #windspeed=data.variables['abiotic_water_windspeed']
 #bottompar=data.variables['phytoplankton_water_phypar']
 #surfpar=data.variables['phytoplankton_water_phypar']
@@ -44,7 +44,7 @@ valid_times = num2date(time[:], time.units).tolist()
 i=0
 for t in valid_times:
     print t.strftime('%Y-%m-%d %H:00:00') + \
-          "%8.1f   %8.2f  %8.2f %8.5f" % (dailypar[i,lvl,0,0],np.mean(temp[i,:,0,0]),np.mean(salinity[i,:,0,0]),shearstress[i])
+          "%8.1f   %8.2f  %8.2f" % (dailypar[i,lvl,0,0],np.mean(temp[i,:,0,0]),np.mean(salinity[i,:,0,0]))
 #   "%8.1f   %8.2f   %8.2f   %8.5f    %8.4f    %8.4f    %8.4f" % (np.mean(dailypar[i,:,0,0]),np.mean(temp[i,:,0,0]),shearstress[i],windspeed[i],bottompar[i,0,0,0],surfpar[i,4,0,0],np.mean(extinction[i,:,0,0]))
     i=i+1
 

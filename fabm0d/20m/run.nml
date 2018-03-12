@@ -16,7 +16,7 @@
 !                       posit.)
 !                     This variable is used only if fabm_calc = True
 &model_setup
-title='PCLake'
+title='PCLake-0d-20m'
 start="2002-01-01 00:00:00"
 stop="2022-01-01 00:00:00"
 dt=600
@@ -39,9 +39,9 @@ swr_method=1
 latitude=55.7
 longitude=9.3
 cloud=0.5
-par_fraction=0.42
-depth=19.999
-par_background_extinction=0.0435
+par_fraction=0.3
+depth=20.0
+par_background_extinction=0.125
 apply_self_shading=.true.
 
 /

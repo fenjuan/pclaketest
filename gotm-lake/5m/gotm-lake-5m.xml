@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<scenario version="gotm-4.1.0">
+<scenario version="gotm-5.1">
 	<gotmrun>
 		<model_setup>
 			<title>
@@ -157,7 +157,7 @@
 				hypsograph_5m.dat
 			</hypsograph_file>
 			<water_balance_method>
-				1
+				0
 			</water_balance_method>
 		</meanflow>
 	</gotmmean>
@@ -176,7 +176,7 @@
 				meteo_file.dat
 			</meteo_file>
 			<wind_factor>
-				0.5
+				1.0
 			</wind_factor>
 			<hum_method>
 				1
@@ -185,7 +185,7 @@
 				0
 			</heat_method>
 			<rain_impact>
-				True
+				False
 			</rain_impact>
 			<calc_evaporation>
 				False
@@ -638,9 +638,12 @@
 		</int_pressure>
 		<extinct>
 			<extinct_method>
-				1
+				7
 			</extinct_method>
 			<extinct_file/>
+			<A>0.7</A>
+			<g1>0.4</g1>
+			<g2>8.0</g2>
 		</extinct>
 		<w_advspec>
 			<w_adv_method>

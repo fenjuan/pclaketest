@@ -3,4 +3,10 @@
 *.ipynb_checkpoints
 *.keep
 *.dat
+*.bat
+*.jpg
+*.csv
+*.png
+*.xlsx
+*.log
 ! gotm_fabm.nml

@@ -2,10 +2,7 @@
 #    file: PATH_TO_TIME_SERIES_FILE
 #    [column: COLUMN_IN_TIME_SERIES_FILE]
 wind_speed:
-    constant_value: 3.0
+    constant_value: 1.5
 bottom_stress:
-    file: env_2m.dat
-    column: 4
-temperature:
-    file: env_2m.dat
-    column: 2
+    file: shear_2m.dat
+    column: 1
