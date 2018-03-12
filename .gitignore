@@ -9,4 +9,5 @@
 *.png
 *.xlsx
 *.log
-! gotm_fabm.nml
+*.sh
+.DS_Store
