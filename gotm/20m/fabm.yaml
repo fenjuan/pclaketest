@@ -367,10 +367,10 @@ instances:
       cPrefDiat: 0.75                                            # selection factor for diatoms ([-]), default = 0.75
       cPrefGren: 0.75                                            # selection factor for greens ([-]), default = 0.75
       cPrefBlue: 0.5                                           # selection factor for blue-greens ([-]), default = 0.125
-      cPrefPOM: 0.25                                             # selection factor for particulate organic matter ([-]), default = 0.25
-      hFilt: 1.0                                                 # half-saturation constant for food conc. on zooplankton (gDW m-3), default = 1.0
+      cPrefPOM: 0.15                                             # selection factor for particulate organic matter ([-]), default = 0.25
+      hFilt: 5.0                                                 # half-saturation constant for food conc. on zooplankton (gDW m-3), default = 1.0
       fDAssZoo: 0.35                                             # dry weight assimilation efficiency of zooplankton ([-]), default = 0.35
-      cFiltMax: 4.5                                              # maximum filtering rate (ltr/mgDW/d), default = 4.5
+      cFiltMax: 1.5                                              # maximum filtering rate (ltr/mgDW/d), default = 4.5
       cPDZooRef: 0.01                                            # reference P/DW-ratio zooplankton (mgP/mgDW), default = 0.01
       cNDZooRef: 0.07                                            # reference N/DW-ratio zooplankton (mgN/mgDW), default = 0.07
       fDissEgesZoo: 0.25                                         # inorganic soluble nutrient fraction of zooplankton egested food ([-]), default = 0.25

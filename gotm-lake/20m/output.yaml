@@ -1,6 +1,12 @@
-../../output/pclake-gotmlake-20m:
-   time_unit: day
-   time_step: 1
-   sync_interval: 0
-   variables:
-      - source: *
+#../../output/pclake-gotmlake-20m:
+#   time_unit: day
+#   time_step: 1
+#   sync_interval: 0
+#   variables:
+#      - source: *
+fabm-pclake-20m:
+    time_unit: day
+    time_step: 10
+    sync_interval: 0
+    variables:
+       - source: *
