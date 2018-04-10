@@ -197,7 +197,7 @@
 				swr_file.dat
 			</swr_file>
 			<swr_factor>
-				1.0
+				0.5
 			</swr_factor>
 			<const_heat>
 				-50.0
