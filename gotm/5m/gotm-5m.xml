@@ -170,7 +170,7 @@
 				meteo_file.dat
 			</meteo_file>
 			<wind_factor>
-				1.0
+				0.8
 			</wind_factor>
 			<hum_method>
 				1
