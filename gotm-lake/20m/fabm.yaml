@@ -93,10 +93,10 @@ instances:
       kNMinDOMS: 0.002                                           # mineralization constant for sediment dissolved organic N (day-1), default = 0.002
       kPMinDOMS: 0.002                                           # mineralization constant for sediment dissolved organic P (day-1), default = 0.002
       kSiMinDOMS: 0.002                                          # mineralization constant for sediment dissolved organic Si (day-1), default = 0.002
-      kDDifDOM: 0.000112                                              # molecular diffusion constant for dissolved organic matter (m2/day), default = 0.000112
-      kNDifDOM: 0.000112                                              # molecular diffusion constant for dissolved organic N (m2/day), default = 0.000112
-      kPDifDOM: 0.000112                                              # molecular diffusion constant for dissolved organic P (m2/day), default = 0.000112
-      kSiDifDOM: 0.000112                                             # molecular diffusion constant for dissolved organic Si (m2/day), default = 0.000112
+      kDDifDOM: 0.0                                              # molecular diffusion constant for dissolved organic matter (m2/day), default = 0.000112
+      kNDifDOM: 0.0                                              # molecular diffusion constant for dissolved organic N (m2/day), default = 0.000112
+      kPDifDOM: 0.0                                              # molecular diffusion constant for dissolved organic P (m2/day), default = 0.000112
+      kSiDifDOM: 0.0                                             # molecular diffusion constant for dissolved organic Si (m2/day), default = 0.000112
     initialization:
       sNH4S: 0.04                                                # sediment ammonium (g m-2)
       sNO3S: 0.025                                               # sediment nitrate (g m-2)
