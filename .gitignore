@@ -1,5 +1,4 @@
 *.nc
-*.nml
 *.ipynb_checkpoints
 *.keep
 *.dat
@@ -10,4 +9,6 @@
 *.xlsx
 *.log
 *.sh
+*.ipynb
+*.exe
 .DS_Store

@@ -763,7 +763,65 @@
 		</canopy>
 	</seagrass>
 	<streams>
-	   <stream/>
+		<stream>
+			<name>
+				inflow
+			</name>
+			<method>
+				1
+			</method>
+			<zu>
+				-2.0
+			</zu>
+			<zl>
+				-0.0
+			</zl>
+			<Q_file>
+				inflow.dat
+			</Q_file>
+			<S_file>
+			</S_file>
+			<T_file/>
+			<Q_col>
+				1
+			</Q_col>
+			<S_col>
+				1
+			</S_col>
+			<T_col>
+				1
+			</T_col>
+		</stream>
+		<stream>
+			<name>
+				outflow
+			</name>
+			<method>
+				1
+			</method>
+			<zu>
+				-1.0
+			</zu>
+			<zl>
+				-0.0
+			</zl>
+			<Q_file>
+				outflow.dat
+			</Q_file>
+			<S_file>
+			</S_file>
+			<T_file>
+			</T_file>
+			<Q_col>
+				1
+			</Q_col>
+			<S_col>
+				1
+			</S_col>
+			<T_col>
+				1
+			</T_col>
+		</stream>
 	</streams>
 	<gotm_fabm>
 		<gotm_fabm_nml>
@@ -815,6 +873,21 @@
 		</gotm_fabm_nml>
 	</gotm_fabm>
 	<fabm_input>
-		<observations/>
+		<observations>
+			<variable>
+				abiotic_water_sNO3W_inflow
+			</variable>
+			<constant_value>
+			    2.5
+			</constant_value>
+		</observations>
+        <observations>
+			<variable>
+				abiotic_water_sPO4W_inflow
+			</variable>
+			<constant_value>
+			    0.25
+			</constant_value>
+		</observations>			
 	</fabm_input>
 </scenario>

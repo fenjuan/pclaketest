@@ -1,0 +1,41 @@
+
+!-------------------------------------------------------------------------------
+! scalar or profile data
+!-------------------------------------------------------------------------------
+! variable       [string]
+!                  name of variable - instance_varname[_streamname]
+! file           [string]
+!                  file name
+! index          [integer]
+!                  column # in file
+! relax_tau      [float, unit = s]
+!                  relaxation time
+! constant_value [float]
+!                  constant variable value
+!-------------------------------------------------------------------------------
+
+&observations
+   variable = 'abiotic_water_sNO3W_inflow',
+   constant_value = 2.5
+ /
+
+
+!-------------------------------------------------------------------------------
+! scalar or profile data
+!-------------------------------------------------------------------------------
+! variable       [string]
+!                  name of variable - instance_varname[_streamname]
+! file           [string]
+!                  file name
+! index          [integer]
+!                  column # in file
+! relax_tau      [float, unit = s]
+!                  relaxation time
+! constant_value [float]
+!                  constant variable value
+!-------------------------------------------------------------------------------
+
+&observations
+   variable = 'abiotic_water_sPO4W_inflow',
+   constant_value = 0.25
+ /
