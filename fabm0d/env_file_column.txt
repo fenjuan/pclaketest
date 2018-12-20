@@ -1,4 +1,0 @@
-env_file columns:
-column1:shortwave radiation
-column2: temperature
-column3: slinity
