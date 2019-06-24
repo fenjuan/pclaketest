@@ -502,7 +502,7 @@ for var in variables_group1:
 # Set x-axis and y-axis ticks
 # Set x-axis for subplots
         axs[i,j].xaxis_date()
-        axs[i,j].xaxis.set_major_locator(mdates.MonthLocator())
+        axs[i,j].xaxis.set_major_locator(mdates.MonthLocator(interval=2))
         axs[i,j].xaxis.set_major_formatter(mdates.DateFormatter('%b'))
         plt.setp( axs[i,j].xaxis.get_majorticklabels(), rotation=90 )
 # turn off the ticks in subplots
@@ -512,7 +512,7 @@ for var in variables_group1:
             axs[i,j].tick_params(axis='x',which='both',top='off',bottom='off')
         axs[i,j].tick_params(axis='y',which='both',left='on',right='off')   
         for xtick in axs[i,j].xaxis.get_major_ticks():
-            xtick.label.set_fontsize(3.5)
+            xtick.label.set_fontsize(6)
             xtick.label.set_rotation(45)
             xtick.label.set_verticalalignment('bottom')
         for ytick in axs[i,j].yaxis.get_major_ticks():
@@ -586,7 +586,7 @@ for var in variables_group2:
 # Set x-axis and y-axis ticks
 # Set x-axis for subplots
         axs[i,j].xaxis_date()
-        axs[i,j].xaxis.set_major_locator(mdates.MonthLocator())
+        axs[i,j].xaxis.set_major_locator(mdates.MonthLocator(interval=2))
         axs[i,j].xaxis.set_major_formatter(mdates.DateFormatter('%b'))
         plt.setp( axs[i,j].xaxis.get_majorticklabels(), rotation=90 )
 # turn off the ticks in subplots
@@ -596,7 +596,7 @@ for var in variables_group2:
             axs[i,j].tick_params(axis='x',which='both',top='off',bottom='off')
         axs[i,j].tick_params(axis='y',which='both',left='on',right='off')   
         for xtick in axs[i,j].xaxis.get_major_ticks():
-            xtick.label.set_fontsize(3.5)
+            xtick.label.set_fontsize(6)
             xtick.label.set_rotation(45)
             xtick.label.set_verticalalignment('bottom')
         for ytick in axs[i,j].yaxis.get_major_ticks():
@@ -684,15 +684,15 @@ for var in variables_group3:
         cbmap=axs[i,j+1].imshow(df_lake[lakeoutput[i]][var],clmp,extent = extent,origin ='lower',                                  aspect='auto',vmin=vmin, vmax=vmax)
 # Set x-axis for subplots
         axs[i,j].xaxis_date()
-        axs[i,j].xaxis.set_major_locator(mdates.MonthLocator())
+        axs[i,j].xaxis.set_major_locator(mdates.MonthLocator(interval=2))
         axs[i,j].xaxis.set_major_formatter(mdates.DateFormatter('%b'))
         plt.setp( axs[i,j].xaxis.get_majorticklabels(), rotation=90 )
         for xtick in axs[i,j].xaxis.get_major_ticks():
-            xtick.label.set_fontsize(5)
+            xtick.label.set_fontsize(6)
         for ytick in axs[i,j].yaxis.get_major_ticks():
             ytick.label.set_fontsize(5)
         axs[i,j+1].xaxis_date()
-        axs[i,j+1].xaxis.set_major_locator(mdates.MonthLocator())
+        axs[i,j+1].xaxis.set_major_locator(mdates.MonthLocator(interval=2))
         axs[i,j+1].xaxis.set_major_formatter(mdates.DateFormatter('%b'))
         plt.setp( axs[i,j+1].xaxis.get_majorticklabels(), rotation=90 )
 # Set y-axis for subplots
@@ -708,7 +708,7 @@ for var in variables_group3:
             axs[i,j].tick_params(axis='x',which='both',top='off',bottom='off')
         axs[i,j].tick_params(axis='y',which='both',left='on',right='off')   
         for xtick in axs[i,j].xaxis.get_major_ticks():
-            xtick.label.set_fontsize(3.5)
+            xtick.label.set_fontsize(6)
             xtick.label.set_rotation(45)
             xtick.label.set_verticalalignment('bottom')
         for ytick in axs[i,j].yaxis.get_major_ticks():
@@ -724,7 +724,7 @@ for var in variables_group3:
             axs[i,j+1].tick_params(axis='x',which='both',top='off',bottom='off')
         axs[i,j+1].tick_params(axis='y',which='both',left='on',right='off')   
         for xtick in axs[i,j+1].xaxis.get_major_ticks():
-            xtick.label.set_fontsize(3.5)
+            xtick.label.set_fontsize(6)
             xtick.label.set_rotation(45)
             xtick.label.set_verticalalignment('bottom')
         for ytick in axs[i,j+1].yaxis.get_major_ticks():
@@ -822,7 +822,7 @@ for var in variables_group1:
             cbmap = axs[i,j].imshow(output[model][var],clmp,extent = extent,origin ='lower',                                    aspect='auto',vmin=vmin, vmax=vmax)
 # Set x-axis for subplots
             axs[i,j].xaxis_date()
-            axs[i,j].xaxis.set_major_locator(mdates.MonthLocator())
+            axs[i,j].xaxis.set_major_locator(mdates.MonthLocator(interval=2))
             axs[i,j].xaxis.set_major_formatter(mdates.DateFormatter('%b'))
 # turn off the ticks in subplots
             if i == 7:
@@ -830,7 +830,7 @@ for var in variables_group1:
             else:
                 axs[i,j].tick_params(axis='x',which='both',top='off',bottom='off')   
             for xtick in axs[i,j].xaxis.get_major_ticks():
-                xtick.label.set_fontsize(3.5)
+                xtick.label.set_fontsize(6)
                 xtick.label.set_rotation(45)
                 xtick.label.set_verticalalignment('bottom')
             for ytick in axs[i,j].yaxis.get_major_ticks():
@@ -929,7 +929,7 @@ for var in variables_group2:
 #            print model, var
             cbmap=axs[i,j].imshow(output[model][var],clmp,extent = extent,origin ='lower',                                  aspect='auto',vmin=vmin, vmax=vmax)
             axs[i,j].xaxis_date()
-            axs[i,j].xaxis.set_major_locator(mdates.MonthLocator())
+            axs[i,j].xaxis.set_major_locator(mdates.MonthLocator(interval=2))
             axs[i,j].xaxis.set_major_formatter(mdates.DateFormatter('%b'))
             plt.setp( axs[i,j].xaxis.get_majorticklabels(), rotation=90 )
 # turn off the ticks in subplots
@@ -938,7 +938,7 @@ for var in variables_group2:
             else:
                 axs[i,j].tick_params(axis='x',which='both',top='off',bottom='off')   
             for xtick in axs[i,j].xaxis.get_major_ticks():
-                xtick.label.set_fontsize(3.5)
+                xtick.label.set_fontsize(6)
                 xtick.label.set_rotation(45)
                 xtick.label.set_verticalalignment('bottom')
             for ytick in axs[i,j].yaxis.get_major_ticks():
