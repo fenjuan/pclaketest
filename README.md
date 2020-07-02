@@ -23,4 +23,4 @@ For those who would like to compile their own code, and for Linux and Mac users,
 
 
 
-A release for publication on WATER, May 2019 is available at [![DOI](https://zenodo.org/badge/125031951.svg)](https://zenodo.org/badge/latestdoi/125031951)
+A release for May 2019 is available at [![DOI](https://zenodo.org/badge/125031951.svg)](https://zenodo.org/badge/latestdoi/125031951)
